@@ -11,23 +11,28 @@ makeCacheMatrix <- function(m = matrix()) {
 
     m_inv <- NULL
 
+    # define the function to set the matrix, ensure the inverse is now NULL
     set <- function(matrix) {
         m <<- matrix
         m_inv <<- NULL
     }
 
+    # define the function to get the matrix
     get <- function() {
         m
     }
 
+    #define the function to set the inverse matrix
     set_inverse <- function(inverse_matrix) {
         m_inv <<- inverse_matrix
     }
 
+    # define the function to get the inverse matrix
     get_inverse <- function() {
         m_inv
     }
 
+    # return the list of functions
     list(set = set, 
          get = get, 
          set_inverse = set_inverse, 
